@@ -128,7 +128,7 @@
   // ---- section numbering ("01 / About") — skips hidden sections automatically
   const testimonialsOn = Array.isArray(C.testimonials) && C.testimonials.length > 0;
   $("#testimonials").hidden = !testimonialsOn;
-  $("#hobbies").hidden = !(Array.isArray(C.hobbies) && C.hobbies.length);
+  if ($("#hobbies")) $("#hobbies").hidden = !(Array.isArray(C.hobbies) && C.hobbies.length);
   $$("section[data-label]").filter((s) => !s.hidden).forEach((s, i) => {
     const eb = $(".eyebrow", s);
     if (eb) eb.innerHTML = `<b>${pad(i + 1)}</b>&nbsp;/&nbsp;${esc(s.dataset.label)}`;
@@ -180,7 +180,9 @@
     if (!src) return `<span class="skill__fallback" aria-hidden="true">${esc(it.name.slice(0, 2))}</span>`;
     return `<img src="${esc(src)}" alt="" width="${size}" height="${size}" loading="lazy" decoding="async" class="${it.invertDark ? "invert-dark" : ""}" data-fallback="${esc(it.name.slice(0, 2))}" />`;
   };
-  $(".skills").innerHTML = C.skills.map((g, gi) => `
+  // Stack section is optional (removed from index.html); the logo marquee below still uses C.skills
+  const skillsEl = $(".skills");
+  if (skillsEl) skillsEl.innerHTML = C.skills.map((g, gi) => `
     <div class="skills__group reveal">
       <h3><span>${pad(gi + 1)}</span>${esc(g.group)}</h3>
       <ul class="skills__items">${g.items.map((it) => `<li class="skill">${logoImg(it, 24)}<span>${esc(it.name)}</span></li>`).join("")}</ul>
@@ -235,11 +237,9 @@
     const wrap = $(".projects");
     if (!list.length) { wrap.innerHTML = `<p class="projects__empty">No projects in this category yet.</p>`; return; }
     wrap.innerHTML = list.map((p, k) => {
-      const row = Math.floor(k / 2), alone = k === list.length - 1 && k % 2 === 0;
-      const size = alone ? "project--full" : (row % 2 === 0) === (k % 2 === 0) ? "project--wide" : "project--narrow";
       const links = projectLinks(p);
       return `
-      <article class="project ${size} ${p.confidential ? "is-confidential" : ""} reveal" style="--d:${(k % 2) * 0.1}s" data-tilt>
+      <article class="project ${p.confidential ? "is-confidential" : ""} reveal" style="--d:${(k % 3) * 0.08}s" data-tilt>
         <div class="project__media">
           <div class="project__badges">
             ${p.categories.map((c) => `<span class="tag">${esc(catLabel(c))}</span>`).join("")}
@@ -410,7 +410,8 @@
     </li>`).join("");
 
   // ---- experience
-  $(".timeline").innerHTML = `<span class="timeline__fill" aria-hidden="true"></span>` + C.experience.map((x) => `
+  // Experience + hobbies sections are optional (removed from index.html); render only if present
+  if ($(".timeline")) $(".timeline").innerHTML = `<span class="timeline__fill" aria-hidden="true"></span>` + C.experience.map((x) => `
     <li class="tl ${x.current ? "tl--current" : ""} reveal">
       <p class="tl__dates mono">${esc(x.dates)}</p>
       <h3>${esc(x.role)}${x.current ? ` <span class="badge-present">Present</span>` : ""}</h3>
@@ -421,7 +422,7 @@
     </li>`).join("");
 
   // ---- beyond the code (hobbies bento)
-  const hobbiesOn = Array.isArray(C.hobbies) && C.hobbies.length > 0;
+  const hobbiesOn = !!$(".bento") && Array.isArray(C.hobbies) && C.hobbies.length > 0;
   if (hobbiesOn) {
     $(".hobbies__intro").textContent = C.hobbiesIntro || "";
     $(".bento").innerHTML = C.hobbies.map((h, i) => {
@@ -451,15 +452,15 @@
       </figure>`).join("");
   }
 
-  // ---- FAQ
-  $(".faq").innerHTML = C.faq.map((f, i) => `
+  // ---- FAQ (section is optional; removed from index.html)
+  if ($(".faq")) $(".faq").innerHTML = C.faq.map((f, i) => `
     <div class="faq__item reveal">
       <h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a-${i}" id="faq-q-${i}">
         <span>${esc(f.q)}</span><span class="faq__icon" aria-hidden="true"></span>
       </button></h3>
       <div class="faq__a" id="faq-a-${i}" role="region" aria-labelledby="faq-q-${i}"><div><p>${esc(f.a)}</p></div></div>
     </div>`).join("");
-  $(".faq").addEventListener("click", (e) => {
+  $(".faq")?.addEventListener("click", (e) => {
     const q = e.target.closest(".faq__q");
     if (!q) return;
     const open = q.getAttribute("aria-expanded") !== "true";

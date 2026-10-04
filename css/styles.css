@@ -671,7 +671,7 @@ em { font-style: normal; }
 .filter[aria-pressed="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
 .filter sup { font-family: var(--font-mono); font-size: 0.6rem; margin-left: 0.2rem; opacity: 0.7; }
 
-.projects { display: grid; gap: clamp(1.2rem, 2.5vw, 2rem); }
+.projects { display: grid; gap: 1.1rem; }
 .project {
   --glow: 0;
   position: relative;
@@ -697,9 +697,9 @@ em { font-style: normal; }
 .project.is-confidential:hover .project__media img { transform: scale(1.12); }
 .project__badges { position: absolute; left: 1rem; top: 1rem; display: flex; flex-wrap: wrap; gap: 0.4rem; z-index: 1; }
 .project__badges .tag { background: var(--glass); backdrop-filter: blur(8px); border-color: var(--line); color: var(--text); }
-.project__body { display: flex; flex-direction: column; gap: 0.9rem; padding: clamp(1.2rem, 2.5vw, 1.8rem); flex: 1; }
+.project__body { display: flex; flex-direction: column; gap: 0.7rem; padding: 1.15rem 1.2rem 1.25rem; flex: 1; }
 .project__head { display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start; }
-.project h3 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.2rem, 1.8vw, 1.45rem); line-height: 1.2; letter-spacing: -0.02em; }
+.project h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.12rem; line-height: 1.25; letter-spacing: -0.02em; }
 .project__tagline { color: var(--muted); font-size: 0.9rem; margin-top: 0.2rem; }
 .project__open {
   flex: none; width: 44px; height: 44px; border-radius: 50%;
@@ -722,18 +722,17 @@ em { font-style: normal; }
 .project__links svg { width: 14px; height: 14px; flex: none; }
 .projects__empty { color: var(--muted); padding: 2rem 0; }
 
-@media (min-width: 768px) {
+/* equal, compact cards */
+.project__summary { font-size: 0.88rem; }
+.project__meta { font-size: 0.8rem; gap: 0.4rem; padding-top: 0.75rem; }
+.project__meta dt { width: 56px; }
+.project__open { width: 38px; height: 38px; }
+.project__badges { left: 0.75rem; top: 0.75rem; }
+@media (min-width: 640px) {
   .projects { grid-template-columns: repeat(2, 1fr); }
-  .project--full { grid-column: 1 / -1; }
-  .project--full .project__media { aspect-ratio: 21 / 9; }
 }
-@media (min-width: 1100px) {
-  .projects { grid-template-columns: repeat(12, 1fr); }
-  .project { grid-column: span 6; }
-  .project--wide { grid-column: span 7; }
-  .project--narrow { grid-column: span 5; }
-  .project--full { grid-column: span 12; }
-  .project--wide .project__media { aspect-ratio: 16 / 9.4; }
+@media (min-width: 1024px) {
+  .projects { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* placeholder ribbon (used in mocks & photo) */
@@ -838,9 +837,9 @@ em { font-style: normal; }
   --glow: 0;
   position: relative; flex: 0 0 min(86%, 340px);
   scroll-snap-align: start;
-  display: flex; flex-direction: column; gap: 1rem;
-  padding: 1.6rem;
-  border-radius: var(--radius-lg);
+  display: flex; flex-direction: column; gap: 0.8rem;
+  padding: 1.3rem;
+  border-radius: var(--radius);
   border: 1px solid var(--line);
   background: var(--surface);
   transform-style: preserve-3d;
@@ -855,27 +854,27 @@ em { font-style: normal; }
     var(--surface);
 }
 .plan__badge {
-  position: absolute; top: -0.75rem; left: 1.6rem;
+  position: absolute; top: -0.7rem; left: 1.3rem;
   background: var(--accent); color: var(--accent-contrast);
   font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em;
   padding: 0.3rem 0.65rem; border-radius: 999px;
 }
-.plan h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; line-height: 1.25; letter-spacing: -0.01em; }
-.plan__desc { color: var(--text-2); font-size: 0.92rem; }
-.plan__price { display: grid; gap: 0.15rem; padding: 1rem 0; border-block: 1px solid var(--line); }
+.plan h3 { font-family: var(--font-display); font-weight: 600; font-size: 1rem; line-height: 1.25; letter-spacing: -0.01em; }
+.plan__desc { color: var(--text-2); font-size: 0.85rem; }
+.plan__price { display: grid; gap: 0.1rem; padding: 0.75rem 0; border-block: 1px solid var(--line); }
 .plan__from { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; color: var(--muted); }
 .plan__amount {
-  font-family: var(--font-display); font-weight: 600; font-size: 1.85rem; letter-spacing: -0.03em; line-height: 1.1;
+  font-family: var(--font-display); font-weight: 600; font-size: 1.55rem; letter-spacing: -0.03em; line-height: 1.1;
   font-variant-numeric: tabular-nums;
 }
 .plan__amount small { font-family: var(--font-body); font-size: 0.85rem; font-weight: 500; color: var(--muted); letter-spacing: 0; }
 .plan__hint { font-size: 0.8rem; color: var(--muted); min-height: 1.2em; }
 .plan__timeline { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--text-2); }
 .plan__timeline svg { width: 16px; height: 16px; color: var(--accent-ink); }
-.plan__list { display: grid; gap: 0.5rem; font-size: 0.9rem; }
+.plan__list { display: grid; gap: 0.4rem; font-size: 0.84rem; }
 .plan__list li { display: flex; gap: 0.6rem; align-items: flex-start; }
 .plan__list svg { flex: none; width: 16px; height: 16px; margin-top: 0.22rem; color: var(--accent-ink); }
-.plan .btn { margin-top: auto; width: 100%; }
+.plan .btn { margin-top: auto; width: 100%; --pad-y: 0.65rem; font-size: 0.88rem; }
 .plan__amount .swap { display: inline-block; transition: opacity 0.25s, transform 0.35s var(--ease-out); }
 .plan__amount .swap.is-out { opacity: 0; transform: translateY(8px); }
 
@@ -883,12 +882,12 @@ em { font-style: normal; }
   .plan { flex-basis: calc(50% - 0.5rem); }
 }
 @media (min-width: 1100px) {
+  /* equal-width cards, 4 per row; a shorter last row is centred */
   .pricing {
-    display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.2rem;
+    flex-wrap: wrap; justify-content: center; gap: 1rem;
     overflow: visible; margin: 0; padding: 0.8rem 0 0;
   }
-  .plan { grid-column: span 4; }
-  .plan:nth-child(n + 4) { grid-column: span 3; }
+  .plan { flex: 0 0 calc((100% - 3rem) / 4); }
 }
 .pricing__note { margin-top: 1.4rem; max-width: 80ch; color: var(--muted); font-size: 0.85rem; }
 

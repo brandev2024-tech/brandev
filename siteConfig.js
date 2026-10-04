@@ -58,11 +58,11 @@ window.SITE_CONFIG = {
     // visitor's email app (mailto:) so no message is ever lost.
     formEndpoint: "",
     budgets: [
-      "Under ₱15,000",
-      "₱15,000 – ₱40,000",
-      "₱40,000 – ₱80,000",
-      "₱80,000 – ₱150,000",
-      "₱150,000+",
+      "Under ₱10,000",
+      "₱10,000 – ₱25,000",
+      "₱25,000 – ₱50,000",
+      "₱50,000 – ₱100,000",
+      "₱100,000+",
       "Not sure yet",
     ],
     timelines: ["ASAP (rush)", "Within 1 month", "1–3 months", "3+ months", "Flexible"],
@@ -387,7 +387,7 @@ window.SITE_CONFIG = {
   ],
 
   /* ---------------------------------------------------------------------------
-     PRICING — SAMPLE NUMBERS, replace with your own.
+     PRICING (all amounts in pesos; edit freely).
      price: number (shown as "Starting at"), or null for "Custom quote".
      estimator.base: starting point used by the price estimator.
   --------------------------------------------------------------------------- */
@@ -396,32 +396,32 @@ window.SITE_CONFIG = {
     locale: "en-PH",
     intro:
       "Every project is different. Pricing depends on scope, features, platform and timeline. These are starting points. Get a free quote for an exact price.",
-    hourly: { enabled: true, rate: 500, label: "Hourly rate" }, // [replace]
+    hourly: { enabled: true, rate: 300, label: "Hourly rate" },
     note:
       "Final price depends on features, integrations, design complexity and deadlines. Payment terms: 50% down, 50% on delivery. Discounts are available for students, NGOs and small businesses.",
     plans: [
       {
         id: "website",
         title: "Website / Landing Page",
-        price: 15000, // [replace]
+        price: 9000,
         suffix: "",
         timeline: "1–2 weeks",
         desc: "A polished, fast site that makes your business look its best.",
-        includes: ["Responsive design", "Up to [5] pages", "Contact form", "Basic SEO"],
+        includes: ["Responsive design", "Up to 5 pages", "Contact form", "Basic SEO"],
       },
       {
         id: "automation",
         title: "Office Automation Tool",
-        price: 8000, // [replace]
+        price: 5000,
         suffix: "",
         timeline: "1–3 weeks",
         desc: "One repetitive task, gone. Formatters, generators, cleanups.",
-        includes: ["Custom tool for one repetitive task", "User guide", "[2] revisions"],
+        includes: ["Custom tool for one repetitive task", "User guide", "2 revisions"],
       },
       {
         id: "web-system",
         title: "Custom Web System",
-        price: 40000, // [replace]
+        price: 25000,
         suffix: "",
         timeline: "3–8 weeks",
         desc: "A management system built around your exact workflow.",
@@ -432,7 +432,7 @@ window.SITE_CONFIG = {
       {
         id: "android",
         title: "Mobile App",
-        price: 50000, // [replace]
+        price: 30000,
         suffix: "",
         timeline: "4–10 weeks",
         desc: "A focused app for your customers or your team.",
@@ -441,7 +441,7 @@ window.SITE_CONFIG = {
       {
         id: "ecommerce",
         title: "E-commerce System / App",
-        price: 60000, // [replace]
+        price: 35000,
         suffix: "",
         timeline: "4–10 weeks",
         desc: "Sell online with full control over products and orders.",
@@ -459,7 +459,7 @@ window.SITE_CONFIG = {
       {
         id: "maintenance",
         title: "Maintenance & Support",
-        price: 3000, // [replace]
+        price: 1500,
         suffix: "/ month",
         timeline: "Ongoing",
         desc: "Keep things running smoothly after launch.",
@@ -470,17 +470,17 @@ window.SITE_CONFIG = {
     // Price estimator ("Estimate only. Final quote after consultation.")
     estimator: {
       types: [
-        { id: "website", label: "Website / Landing Page", base: 15000, unit: "pages", included: 5, perUnit: 2000, max: 20 },
-        { id: "automation", label: "Office Automation Tool", base: 8000, unit: "features", included: 1, perUnit: 3000, max: 10 },
-        { id: "web-system", label: "Custom Web System", base: 40000, unit: "modules", included: 3, perUnit: 8000, max: 15 },
-        { id: "android", label: "Mobile App", base: 50000, unit: "screens", included: 8, perUnit: 3000, max: 40 },
-        { id: "ecommerce", label: "E-commerce System / App", base: 60000, unit: "features", included: 6, perUnit: 5000, max: 20 },
+        { id: "website", label: "Website / Landing Page", base: 9000, unit: "pages", included: 5, perUnit: 1000, max: 20 },
+        { id: "automation", label: "Office Automation Tool", base: 5000, unit: "features", included: 1, perUnit: 2000, max: 10 },
+        { id: "web-system", label: "Custom Web System", base: 25000, unit: "modules", included: 3, perUnit: 5000, max: 15 },
+        { id: "android", label: "Mobile App", base: 30000, unit: "screens", included: 8, perUnit: 2000, max: 40 },
+        { id: "ecommerce", label: "E-commerce System / App", base: 35000, unit: "features", included: 6, perUnit: 3000, max: 20 },
       ],
       addons: [
-        { id: "admin", label: "Admin panel", price: 10000 },
-        { id: "payments", label: "Online payments", price: 8000 },
-        { id: "hosting", label: "Hosting & domain setup (1 yr)", price: 5000 },
-        { id: "design", label: "Custom UI design", price: 7000 },
+        { id: "admin", label: "Admin panel", price: 6000 },
+        { id: "payments", label: "Online payments", price: 5000 },
+        { id: "hosting", label: "Hosting & domain setup (1 yr)", price: 3000 },
+        { id: "design", label: "Custom UI design", price: 4000 },
       ],
       rush: { label: "Rush delivery", multiplier: 1.3 },
       spread: 1.3, // high end of range = low × spread
