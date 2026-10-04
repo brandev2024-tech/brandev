@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <!-- SEO — crawlers and link previews read these directly, so edit them here.
+       Replace https://alfredcalawa.example.com with your real domain (also in sitemap.xml / robots.txt). -->
+  <title>Alfred Calawa | Freelance Software Engineer (Web &amp; App) · Baguio City, Philippines</title>
+  <meta name="description" content="Alfred Calawa, freelance software engineer (Web &amp; App) based in Baguio City, Philippines. Custom systems, web apps, mobile apps and automation tools for clients. Open to remote full-time and part-time roles." />
+  <meta name="keywords" content="Alfred Calawa, freelance web developer Baguio City, freelance software engineer Philippines, remote software engineer, custom system developer, app developer for hire, mobile app developer Philippines, office automation developer, e-commerce developer, government systems developer" />
+  <meta name="author" content="Alfred Calawa" />
+  <link rel="canonical" href="https://alfredcalawa.example.com/" />
+  <meta name="theme-color" content="#0B0B0F" />
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Alfred Calawa" />
+  <meta property="og:title" content="Alfred Calawa | Freelance Software Engineer (Web &amp; App)" />
+  <meta property="og:description" content="Based in Baguio City, Philippines. I design and build systems and apps that make work faster. Open to freelance and remote work." />
+  <meta property="og:url" content="https://alfredcalawa.example.com/" />
+  <meta property="og:image" content="https://alfredcalawa.example.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Alfred Calawa | Freelance Software Engineer (Web &amp; App)" />
+  <meta name="twitter:description" content="Freelance &amp; remote. I design and build systems and apps that make work faster." />
+  <meta name="twitter:image" content="https://alfredcalawa.example.com/assets/og-image.png" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <!-- Apply saved / system theme before first paint (prevents a flash) -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") t = "dark"; // dark is the default; the toggle remembers a visitor's choice
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) { document.documentElement.setAttribute("data-theme", "dark"); }
+      document.documentElement.classList.add("js");
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <script src="siteConfig.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span></div>
+
+  <!-- ============================== NAVBAR ============================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#top" class="nav__logo" aria-label="Alfred Calawa, back to top">
+        <span class="nav__mark" data-bind="initials">AC</span>
+        <span class="nav__brand" data-bind="name">Alfred Calawa</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav__actions">
+        <span class="status status--sm" data-status="short"></span>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <mask id="moon-mask"><rect width="24" height="24" fill="#fff"/><circle class="theme-toggle__moon" cx="24" cy="4" r="8" fill="#000"/></mask>
+            <circle class="theme-toggle__sun" cx="12" cy="12" r="5" mask="url(#moon-mask)" fill="currentColor"/>
+            <g class="theme-toggle__rays" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="12" y1="1.5" x2="12" y2="3.5"/><line x1="12" y1="20.5" x2="12" y2="22.5"/>
+              <line x1="1.5" y1="12" x2="3.5" y2="12"/><line x1="20.5" y1="12" x2="22.5" y2="12"/>
+              <line x1="4.6" y1="4.6" x2="6" y2="6"/><line x1="18" y1="18" x2="19.4" y2="19.4"/>
+              <line x1="4.6" y1="19.4" x2="6" y2="18"/><line x1="18" y1="6" x2="19.4" y2="4.6"/>
+            </g>
+          </svg>
+        </button>
+        <a href="#contact" class="btn btn--accent btn--sm nav__hire" data-magnetic>Hire me</a>
+        <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen menu -->
+  <div class="menu" id="menu" hidden>
+    <nav class="menu__links" aria-label="Mobile">
+      <a href="#about"><small>01</small>About</a>
+      <a href="#services"><small>02</small>Services</a>
+      <a href="#work"><small>03</small>Work</a>
+      <a href="#pricing"><small>04</small>Pricing</a>
+      <a href="#faq"><small>05</small>FAQ</a>
+      <a href="#contact"><small>06</small>Contact</a>
+    </nav>
+    <div class="menu__foot">
+      <span class="status" data-status="long"></span>
+      <a href="#contact" class="btn btn--accent">Get a quote</a>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" id="top" aria-label="Introduction">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="blob blob--a"></div>
+        <div class="blob blob--b"></div>
+        <canvas class="hero__canvas"></canvas>
+      </div>
+      <div class="container hero__inner">
+        <p class="status" data-status="long"></p>
+        <h1 class="hero__title">
+          <span class="split hero__first" data-bind="firstNames">Alfred</span>
+          <span class="split hero__last"><span data-bind="lastName">Calawa</span><span class="hero__dot">.</span></span>
+        </h1>
+        <div class="hero__meta">
+          <p class="hero__role mono"><span data-bind="title">Freelance Software Engineer · Web &amp; App</span></p>
+          <p class="hero__typer mono" aria-live="off"><span class="typer__arrow">→</span> <span class="typer" aria-hidden="true"></span><span class="typer__caret" aria-hidden="true"></span><span class="sr-only" data-bind="rolesText"></span></p>
+        </div>
+        <p class="hero__value" data-bind="valueStatement">I design and build systems and apps that make work faster.</p>
+        <div class="hero__ctas">
+          <a href="#contact" class="btn btn--accent btn--lg" data-magnetic>Start a Project <span class="btn__arrow" aria-hidden="true">↗</span></a>
+          <a href="#work" class="btn btn--ghost btn--lg" data-magnetic>View Work</a>
+        </div>
+        <figure class="hero__portrait" data-tilt hidden>
+          <picture>
+            <source type="image/webp" />
+            <img alt="" width="960" height="1200" decoding="async" fetchpriority="high" />
+          </picture>
+        </figure>
+        <div class="hero__foot mono">
+          <span data-bind="location">Baguio City, Philippines 2600</span>
+          <span class="hero__scroll" aria-hidden="true">Scroll <i></i></span>
+          <span data-bind="workMode">Available for remote work and freelance projects.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== MARQUEE ============================== -->
+    <div class="marquee" aria-label="Technologies I work with">
+      <div class="marquee__track"></div>
+    </div>
+
+    <!-- ============================== ABOUT ============================== -->
+    <section class="section" id="about" data-label="About">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow mono"></p>
+          <h2 class="section__title">Software that <em>gives hours back</em>.</h2>
+        </header>
+        <div class="about">
+          <div class="about__main">
+            <p class="about__lead reveal" data-bind="bio"></p>
+            <div class="about__story reveal"></div>
+          </div>
+          <div class="about__side">
+            <dl class="facts reveal"></dl>
+            <div class="about__actions reveal"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== SERVICES ============================== -->
+    <section class="section" id="services" data-label="Services">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow mono"></p>
+          <h2 class="section__title">What I <em>build</em>.</h2>
+          <p class="section__sub">Custom systems, web apps, mobile apps and automation tools for businesses, offices and individuals.</p>
+        </header>
+        <div class="services reveal"></div>
+      </div>
+    </section>
+
+    <!-- ============================== SKILLS ============================== -->
+    <section class="section" id="skills" data-label="Stack">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow mono"></p>
+          <h2 class="section__title">Tools of the <em>trade</em>.</h2>
+        </header>
+        <div class="skills"></div>
+      </div>
+    </section>
+
+    <!-- ============================== PROJECTS ============================== -->
+    <section class="section" id="work" data-label="Projects">
+      <div class="container">
+        <header class="section__head section__head--row reveal">
+          <div>
+            <p class="eyebrow mono"></p>
+            <h2 class="section__title">Selected <em>work</em>.</h2>
+          </div>
+          <div class="filters" role="group" aria-label="Filter projects"></div>
+        </header>
+        <div class="projects" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ============================== STATS ============================== -->
+    <section class="stats" aria-label="Impact">
+      <div class="container stats__grid"></div>
+    </section>
+
+    <!-- ============================== PRICING ============================== -->
+    <section class="section" id="pricing" data-label="Pricing">
+      <div class="container">
+        <header class="section__head section__head--row reveal">
+          <div>
+            <p class="eyebrow mono"></p>
+            <h2 class="section__title">Flexible, <em>project-based</em>.</h2>
+            <p class="section__sub pricing__intro"></p>
+          </div>
+          <div class="seg" role="group" aria-label="Pricing mode">
+            <button type="button" class="seg__btn" aria-pressed="true" data-mode="project">Per project</button>
+            <button type="button" class="seg__btn" aria-pressed="false" data-mode="hourly"></button>
+          </div>
+        </header>
+        <div class="pricing" tabindex="0" aria-label="Pricing plans (scrollable on small screens)"></div>
+        <p class="pricing__note"></p>
+
+        <div class="estimator reveal" id="estimator">
+          <div class="estimator__head">
+            <p class="eyebrow mono">Price estimator</p>
+            <h3>Ballpark your project in <em>30 seconds</em>.</h3>
+          </div>
+          <form class="estimator__form" onsubmit="return false">
+            <div class="field">
+              <label for="est-type">Project type</label>
+              <select id="est-type"></select>
+            </div>
+            <div class="field">
+              <label for="est-units"><span class="est-unit-label">Pages</span>: <output id="est-units-out">5</output></label>
+              <input type="range" id="est-units" min="1" max="20" value="5" />
+            </div>
+            <fieldset class="field">
+              <legend>Add-ons</legend>
+              <div class="chips est-addons"></div>
+            </fieldset>
+          </form>
+          <div class="estimator__result" aria-live="polite">
+            <p class="mono estimator__label">Estimated range</p>
+            <p class="estimator__value"><span class="est-low">₱0</span><span class="estimator__dash">–</span><span class="est-high">₱0</span></p>
+            <p class="estimator__disclaimer">Estimate only. Final quote after consultation.</p>
+            <a href="#contact" class="btn btn--accent est-cta" data-magnetic>Request exact quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== PROCESS ============================== -->
+    <section class="section" id="process" data-label="Process">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow mono"></p>
+          <h2 class="section__title">How we <em>work together</em>.</h2>
+        </header>
+        <ol class="process"></ol>
+      </div>
+    </section>
+
+    <!-- ============================== EXPERIENCE ============================== -->
+    <section class="section" id="experience" data-label="Experience">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow mono"></p>
+          <h2 class="section__title">Where I've <em>been</em>.</h2>
+        </header>
+        <ol class="timeline"></ol>
+      </div>
+    </section>
+
+    <!-- ============================== BEYOND THE CODE ============================== -->
+    <section class="section" id="hobbies" data-label="Beyond the code">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow mono"></p>
+          <h2 class="section__title">Beyond the <em>code</em>.</h2>
+          <p class="section__sub hobbies__intro"></p>
+        </header>
+        <div class="bento"></div>
+      </div>
+    </section>
+
+    <!-- ============================== TESTIMONIALS ============================== -->
+    <section class="section" id="testimonials" data-label="Testimonials" hidden>
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow mono"></p>
+          <h2 class="section__title">Kind <em>words</em>.</h2>
+        </header>
+        <div class="testimonials"></div>
+      </div>
+    </section>
+
+    <!-- ============================== FAQ ============================== -->
+    <section class="section" id="faq" data-label="FAQ">
+      <div class="container faq-wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow mono"></p>
+          <h2 class="section__title">Questions, <em>answered</em>.</h2>
+        </header>
+        <div class="faq"></div>
+      </div>
+    </section>
+
+    <!-- ============================== CONTACT ============================== -->
+    <section class="section contact" id="contact" data-label="Contact">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow mono"></p>
+          <h2 class="contact__title">Let's build <em>something</em>.</h2>
+        </header>
+        <div class="contact__grid">
+          <aside class="contact__aside reveal">
+            <p class="status" data-status="long"></p>
+            <p class="contact__reply"></p>
+            <p class="contact__mode" data-bind="workMode"></p>
+            <div class="contact__email">
+              <a class="contact__email-link" href="#"></a>
+              <button type="button" class="icon-btn copy-email" aria-label="Copy email address"></button>
+            </div>
+            <p class="contact__phone"></p>
+            <ul class="socials"></ul>
+          </aside>
+
+          <form class="quote reveal" id="quote-form" novalidate>
+            <div class="quote__fields">
+              <div class="field">
+                <label for="q-name">Name <span aria-hidden="true">*</span></label>
+                <input id="q-name" name="name" type="text" autocomplete="name" required />
+                <p class="field__error" id="q-name-err"></p>
+              </div>
+              <div class="field">
+                <label for="q-email">Email <span aria-hidden="true">*</span></label>
+                <input id="q-email" name="email" type="email" autocomplete="email" required />
+                <p class="field__error" id="q-email-err"></p>
+              </div>
+              <div class="field field--full">
+                <label for="q-org">Organization / company <small>(optional)</small></label>
+                <input id="q-org" name="organization" type="text" autocomplete="organization" />
+              </div>
+              <div class="field">
+                <label for="q-type">Project type <span aria-hidden="true">*</span></label>
+                <select id="q-type" name="projectType" required></select>
+                <p class="field__error" id="q-type-err"></p>
+              </div>
+              <div class="field">
+                <label for="q-budget">Budget range</label>
+                <select id="q-budget" name="budget"></select>
+              </div>
+              <div class="field field--full">
+                <label for="q-timeline">Timeline</label>
+                <select id="q-timeline" name="timeline"></select>
+              </div>
+              <div class="field field--full">
+                <label for="q-desc">Project description <span aria-hidden="true">*</span></label>
+                <textarea id="q-desc" name="description" rows="5" required placeholder="What should it do, who will use it, and what problem does it solve?"></textarea>
+                <p class="field__error" id="q-desc-err"></p>
+              </div>
+              <div class="field field--full">
+                <label for="q-link">Link to files / references <small>(optional)</small></label>
+                <input id="q-link" name="link" type="url" inputmode="url" placeholder="https://drive.google.com/…" />
+                <p class="field__error" id="q-link-err"></p>
+              </div>
+              <!-- honeypot (spam trap) -->
+              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true" />
+            </div>
+            <div class="quote__foot">
+              <button type="submit" class="btn btn--accent btn--lg quote__submit" data-magnetic>
+                <span class="quote__submit-label">Send request</span> <span class="btn__arrow" aria-hidden="true">↗</span>
+              </button>
+              <p class="quote__status" role="status" aria-live="polite"></p>
+            </div>
+            <div class="quote__success" hidden>
+              <svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-15"/></svg>
+              <h3>Request sent.</h3>
+              <p></p>
+              <button type="button" class="btn btn--ghost quote__again">Send another</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__brand" data-bind="name">Alfred Calawa</p>
+        <p class="status status--sm" data-status="short"></p>
+      </div>
+      <div class="footer__mid">
+        <a class="footer__email" href="#"></a>
+        <p class="footer__meta mono"></p>
+      </div>
+      <a href="#top" class="btn btn--ghost btn--sm to-top" data-magnetic>Back to top <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+
+  <!-- Floating CTA -->
+  <a href="#contact" class="fab" data-magnetic aria-label="Hire me: get a quote">
+    <span class="fab__dot" aria-hidden="true"></span><span>Hire me</span><span class="fab__extra"> / Get a quote</span>
+  </a>
+
+  <!-- Project modal -->
+  <dialog class="modal" aria-labelledby="modal-title">
+    <div class="modal__inner"></div>
+  </dialog>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <noscript><p style="padding:2rem;text-align:center">This site needs JavaScript for its content. Email me at the address in the footer.</p></noscript>
+</body>
+</html>
