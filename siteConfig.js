@@ -245,7 +245,7 @@ window.SITE_CONFIG = {
       role: "Solo developer: design and development",
       impact: "Turned a social-media-only shop into a real storefront where customers can see every item, price and stock label before they message.",
       images: ["assets/projects/dms-cover.webp", "assets/projects/dms-hero.webp"],
-      links: { demo: "https://dms.agriscope2026.workers.dev/", repo: "", caseStudy: "" },
+      links: { demo: "https://dms.brandev.workers.dev/", repo: "", caseStudy: "" },
       confidential: false,
       detail: {
         problem:
